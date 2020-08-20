@@ -11,6 +11,7 @@
 - [10171: 고양이 만들기](#10171)
 - [10172: 개](#10172)
 - [10998: A*B](#10998)
+- [11718: 그대로 출력하기](#11718)
 
 ### **알고리즘 분류**
 - 
@@ -20,7 +21,7 @@
 - [readLine](#readLine)
 - [split](#split)
 - [components](#components)
-
+- [while](#while)
 ***
 ### **[전체문제]**
 
@@ -159,8 +160,20 @@ print("||_/=\\\\__|")
 : print시 **"** 사용의 경우 \ 을 추가한다. 
 
 
-### 10998
+### 11718
+```swift
+while true {
+  let line = readLine() ?? ""
+  if line.isEmpty {break} //공백이면 멈추기
+print(line)
+}
+```
 
+**배운점**
+: 문제 보자마자 while을 써야겠다는 생각이 들었던 것에 칭찬! 그리고 [while](#while)문을 제대로 써본적이 없었는데 이번 기회에 확실히 이해하게됨!
+
+
+### 10998
 ```swift
 import Foundation
 
@@ -174,7 +187,6 @@ print(a*b)
 
 **배운점**
 : [1000](#1000),[1001](#1001)과 동일
-
 
 
 
@@ -235,5 +247,23 @@ print(a+b)
 ![](image/1001.png)
 
 
+### while
+- while은 제어문임.
 
+*무한 루프*
+```swift
+while true {
+...
+}
+```
 
+*한번 실행 시킨 뒤 조건문 검사*
+```swift
+var timesup = 10
+var currentTime = 0
+
+repeat {
+    print(currentTime)
+    currentTime += 1
+}while timesup >= currentTime
+```
