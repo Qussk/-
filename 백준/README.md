@@ -14,7 +14,7 @@
 ### **필요한 개념**
 - [readLine](#readLine)
 - [split](#split)
-
+- [components](#components)
 
 ***
 ### **[전체문제]**
@@ -41,6 +41,7 @@ print(A+B)
 이것때문에 시간 오지게 버림...... (첫문제부터 백준을 해야하나?... 의구심이 들었음)
 
 ### 1001
+1. [split](#split)사용
 ```swift
 let line = readLine() ?? "" 
 let Arr = line.split{$0 == " "}.map(String.init) 
@@ -49,15 +50,40 @@ let b = Int(Arr[1]) ?? 0
 
 print(a-b)
 ```
-문제는 백준은 통과하는데 tool에서는 **Thread 1: Fatal error: Index out of range**라고 에러뜸... -.,-
+
+```
+3 4 <---입력
+-1 <---출력
+[type: String.SubSequence]
+```
+
+2.  [components](#components)사용
+```swift
+import Foundation
+
+let line = readLine() ?? ""
+let arr = line.components(separatedBy: " ")
+let a = Int(arr[0]) ?? 0
+let b = Int(arr[1]) ?? 0
+
+print(a-b)
+```
+```
+3 4 <---입력
+-1 <---출력
+[type: String]
+```
+- Foundation 유무가 split와 components의 차이 
 
 
 ***
 ### **[필요한 개념]** 
+
 ### readLine
 [https://developer.apple.com/documentation/swift/1641199-readline](https://developer.apple.com/documentation/swift/1641199-readline)
 - Foundation영향을 받지 않는다. 
-- 입력값에 대한 입출력을 도와준다. 
+- 입력값에 대한 입출력을 도와준다.
+- 리턴값은 Optional String의 형태로 옵셔널 바인딩이 필수다. 
 
 예) 1000(A+B)으로 예시를 들면, 
 ```
@@ -86,14 +112,26 @@ print(a+b)
 
 
 ### split
+- split의 경우 Swift 기본 instance method여서 Foundation 없이도 사용 가능
 - 특정 문자열(separator지정)시, 단위로 쪼개줌.
-- 단, split의 경우 map을 꼭 써야함. 
+- split의 경우 map을 꼭 써야함. 
+- 리턴값이 [String.SubSequence]임.
 
-예시)
+예시) 공백으로 구분하기. 
 
 ![](image/map.png)
 
 
-### 
+### components
+- components의 경우 Foundation에 속해있는 instance method이기 때문에 반드시 import Foundation을 필요로 한다. 
+- 대신, 용량도 늘어남
+- 특정 문자열(separator지정)시, 단위로 쪼개줌.(기능은 split와 동일)
+- 리턴값이 [String]임. 
+
+예시) 공백으로 구분하기 
+
+![](image/1001.png)
+
+
 
 
