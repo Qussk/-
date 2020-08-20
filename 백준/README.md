@@ -3,10 +3,14 @@
 
 
 ### **전체문제**
-- [1000](#1000)
-- [1001](#1001)
-- [10171](#10171)
-- [10172](#10172)
+- [1000: A+B](#1000)
+- [1001: A-B](#1001)
+- [1008: A/B](#1008)
+-
+-
+- [10171: 고양이 만들기](#10171)
+- [10172: 개](#10172)
+- [10998: A*B](#10998)
 
 ### **알고리즘 분류**
 - 
@@ -83,23 +87,48 @@ print(a-b)
 : split 와 components의 차이, map이용 
 
 
-### 10171
-고앵이 만들기 고앵고앵 
+### 1008
 
 ```swift
-/*
+//1008-1
+import Foundation
+
+let line = readLine() ?? ""
+let arr = line.components(separatedBy: " ")
+let a = Double(arr[0]) ?? 0.0
+let b = Double(arr[1]) ?? 0.0
+
+print(a/b)
+
+//1008-2
+
+let line = readLine() ?? ""
+let arr = line.split{$0 == " "}.map(String.init)
+let a = Double(arr[0]) ?? 0.0
+let b = Double(arr[1]) ?? 0.0
+
+print(a/b)
+```
+**배운점**
+: 나누기는 Double로 바꿔야한다.(명확히)
+
+
+
+
+### 10171
+고앵이 만들기 고앵고앵 
+```
  //고양이 출력
-/*
 \    /\
  )  ( ')
 (  /  )
  \(__)|
-*/
-
-  print("\\    /\\")
-  print(" )  ( ')")
-  print("(  /  )")
-  print(" \\(__)|")
+```
+```swift
+print("\\    /\\")
+print(" )  ( ')")
+print("(  /  )")
+print(" \\(__)|")
 ```
 
 **배운점**
@@ -128,6 +157,25 @@ print("||_/=\\\\__|")
 
 **배운점**
 : print시 **"** 사용의 경우 \ 을 추가한다. 
+
+
+### 10998
+
+```swift
+import Foundation
+
+let line = readLine() ?? ""
+let arr = line.components(separatedBy: " ")
+let a = Int(arr[0]) ?? 0
+let b = Int(arr[1]) ?? 0
+
+print(a*b)
+```
+
+**배운점**
+: [1000](#1000),[1001](#1001)과 동일
+
+
 
 
 ***
