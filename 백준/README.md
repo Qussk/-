@@ -12,7 +12,8 @@
 
 
 ### **필요한 개념**
-- [readLine()](#readLine())
+- [readLine](#readLine)
+- [split](#split)
 
 
 ***
@@ -46,7 +47,7 @@ print(a-b)
 
 ***
 ### **[필요한 개념]** 
-### readLine()
+### readLine
 [https://developer.apple.com/documentation/swift/1641199-readline](https://developer.apple.com/documentation/swift/1641199-readline)
 - Foundation영향을 받지 않는다. 
 - 입력값에 대한 입출력을 도와준다. 
