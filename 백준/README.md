@@ -28,6 +28,13 @@ let B = Int(readLine()!) ?? 0
 print(A+B)
 
 ```
+
+```
+111
+222
+**333**
+```
+
 문제는 tool에서는 아무런 이상이 없는 데 백준에서는 런타임 에러남... 
 애플이 맞겠거니 싶음,,(통과하려면 아래 1001번 문제에서 print(a+b)로만 바꿔주면 통과함...)
 
@@ -51,20 +58,39 @@ print(a-b)
 [https://developer.apple.com/documentation/swift/1641199-readline](https://developer.apple.com/documentation/swift/1641199-readline)
 - Foundation영향을 받지 않는다. 
 - 입력값에 대한 입출력을 도와준다. 
+
 예) 1000(A+B)으로 예시를 들면, 
+```
+import Foundation
+
+let a = readLine() ?? ""
+let b = readLine() ?? ""
+
+print(a+b)
+```
+- a와 b는 readLine()에 대해 문자열 값을 1라인 받는다.
+- pirnt는 (a+b)로 출력되어 testtest1가 된다.
+
 ![](image/read2.png)
-a는 readLine()에 대한 문자열 값을 받는다(b와 동일)
-pirnt는 (a+b)로 출력되어 testtest1가 된다.
-![](image/read1.png)
+
 모 이런식임..
+
+![](image/read1.png)
+
+이렇게..
+
+
 *Int로 반환할 경우*
+
 ![](image/read.png)
 
 
 ### split
-- 특정 문자시, 단위로 쪼개줌.
-- 단, map을 꼭 써야함. 
+- 특정 문자열(separator지정)시, 단위로 쪼개줌.
+- 단, split의 경우 map을 꼭 써야함. 
+
 예시)
+
 ![](image/map.png)
 
 
