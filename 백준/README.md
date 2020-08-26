@@ -7,13 +7,16 @@
 - [1001: A-B](#1001)
 - [1008: A/B](#1008)
 -
--
+- [2558: A+B -2](#2558)
+- [2839: 설탕배달](#2839)
 - [10171: 고양이 만들기](#10171)
 - [10172: 개](#10172)
+- [10430: 나머지](#10430)
 - [10998: A*B](#10998)
 - [11718: 그대로 출력하기](#11718)
 - [11719: 그대로 출력하기2](#11719)
 - [10869: 사칙연산](#10869)
+
 
 ### **알고리즘 분류**
 - 
@@ -36,7 +39,6 @@ let B = Int(readLine()!) ?? 0
 print(A+B)
 
 ```
-
 ```
 111
 222
@@ -116,7 +118,54 @@ print(a/b)
 : 나누기는 Double로 바꿔야한다.(명확히)
 
 
+### 2558 
 
+- [문제 링크 : https://www.acmicpc.net/problem/2558
+](https://www.acmicpc.net/problem/2558)
+
+```swift
+//A+B-2
+
+let a = Int(readLine()!) ?? 0
+let b = Int(readLine()!) ?? 0
+print(a+b)
+```
+```
+1 <--입력
+2 <--입력
+3 <--출력
+```
+**배운점**
+: [1000](#1000)재복습
+
+### 2839
+
+- [문제 링크 : https://www.acmicpc.net/problem/2558
+](https://www.acmicpc.net/problem/2839)
+
+```swift
+let line = readLine() ?? ""
+let a = Int(line) ?? 0
+
+var starter = a / 5 //1.기본적으로 5로 나눔
+
+while starter >= 0 { //2.참이면
+  let remain = a - (starter * 5)//2-1.떨어진 경우 받은 값이 0으로됨 ;; 떨어지지 않고 자연수가 다시 생겼다면,
+  if remain % 3 == 0 { //3. 2-1에서 남은 자연수가 3으로 나누어 떨어지면,
+    print(starter + remain / 3) //3-1. 나누기 3을 하여
+    break
+  }
+  starter = starter - 1 //4.주머니 갯수 반환?
+  if (starter == -1) {print(-1)}
+}
+```
+```
+18 <- n값 입력
+4
+```
+
+**배운점**
+: 먼저 무엇을 하는게 가장 효율적인지 부터 생각해봐야할 것 같다. 
 
 ### 10171
 고앵이 만들기 고앵고앵 
@@ -161,6 +210,34 @@ print("||_/=\\\\__|")
 **배운점**
 : print시 **"** 사용의 경우 \ 을 추가한다. 
 
+
+### 10430
+- [문제 링크 : https://www.acmicpc.net/problem/10430](https://www.acmicpc.net/problem/10430)
+
+
+```swift
+let line = readLine() ?? ""
+let arr = line.split {$0 == " "}.map(String.init)
+let a = Int(arr[0]) ?? 0
+let b = Int(arr[1]) ?? 0
+let c = Int(arr[2]) ?? 0
+
+print((a+b)%c)
+print((a%c + b%c)%c)
+print((a*b)%c)
+print(((a%c)*(b%c))%c)
+
+```
+```
+5 8 4 <---입력값
+1
+1
+0
+0
+```
+
+**배운점**
+: 괄호 주의
 
 ### 11718
 ```swift
@@ -222,8 +299,6 @@ print(a%b)
 
 **배운점** 
 :  그냥 프린트를 다섯번 하면 되는 구나.. (괜히 복잡하게 생각했다..)..
-
-
 
 
 ### 10998
